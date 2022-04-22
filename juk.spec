@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xBB463350D6EF31EF (heiko@shruuf.de)
 #
 Name     : juk
-Version  : 21.12.3
-Release  : 15
-URL      : https://download.kde.org/stable/release-service/21.12.3/src/juk-21.12.3.tar.xz
-Source0  : https://download.kde.org/stable/release-service/21.12.3/src/juk-21.12.3.tar.xz
-Source1  : https://download.kde.org/stable/release-service/21.12.3/src/juk-21.12.3.tar.xz.sig
+Version  : 22.04.0
+Release  : 16
+URL      : https://download.kde.org/stable/release-service/22.04.0/src/juk-22.04.0.tar.xz
+Source0  : https://download.kde.org/stable/release-service/22.04.0/src/juk-22.04.0.tar.xz
+Source1  : https://download.kde.org/stable/release-service/22.04.0/src/juk-22.04.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GPL-2.0
@@ -73,15 +73,15 @@ locales components for the juk package.
 
 
 %prep
-%setup -q -n juk-21.12.3
-cd %{_builddir}/juk-21.12.3
+%setup -q -n juk-22.04.0
+cd %{_builddir}/juk-22.04.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1646536054
+export SOURCE_DATE_EPOCH=1650670450
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -97,11 +97,11 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1646536054
+export SOURCE_DATE_EPOCH=1650670450
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/juk
-cp %{_builddir}/juk-21.12.3/COPYING %{buildroot}/usr/share/package-licenses/juk/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/juk-21.12.3/cmake/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/juk/77976f406ba34009d9ba5a43b882fe6de68e5175
+cp %{_builddir}/juk-22.04.0/COPYING %{buildroot}/usr/share/package-licenses/juk/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/juk-22.04.0/cmake/COPYING-CMAKE-SCRIPTS %{buildroot}/usr/share/package-licenses/juk/77976f406ba34009d9ba5a43b882fe6de68e5175
 pushd clr-build
 %make_install
 popd
@@ -127,8 +127,8 @@ popd
 /usr/share/icons/hicolor/64x64/apps/juk.png
 /usr/share/juk/pics/playing.png
 /usr/share/juk/pics/theme.svg
+/usr/share/kio/servicemenus/jukservicemenu.desktop
 /usr/share/knotifications5/juk.notifyrc
-/usr/share/kservices5/ServiceMenus/jukservicemenu.desktop
 /usr/share/kxmlgui5/juk/jukui-rtl.rc
 /usr/share/kxmlgui5/juk/jukui.rc
 /usr/share/metainfo/org.kde.juk.appdata.xml
